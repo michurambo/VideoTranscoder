@@ -26,7 +26,7 @@ const VideoTranscodeApp = () => {
   };
   const inputPath = selectedVideo?.uri;
   console.log("selected video" + selectedVideo?.uri);
-  const outputPath = RNFS.TemporaryDirectoryPath + "/testing.mp4"; // Replace with the desired output video file path
+  const outputPath = RNFS.TemporaryDirectoryPath + "/test.mp4"; // Replace with the desired output video file path
 
   const transcodeVideo = () => {
     console.log("URI" + selectedVideo.uri);
@@ -63,7 +63,7 @@ const VideoTranscodeApp = () => {
         veryslow
 
         */
-    return `-i ${info.uri} -pix_fmt yuv420p -vf "scale='if(gte(iw\,ih)\,min(1280\,iw)\,-2):if(lt(iw\,ih)\,min(1280\,ih)\,-2)'" -c:v libx264 -b:v 1.5M -maxrate 2M -bufsize 3M -c:a aac -ac 2 -movflags +faststart ${info.outputPath}`;
+    return `-i ${info.uri} -pix_fmt yuv420p -vf "scale='if(gte(iw\,ih)\,min(1280\,iw)\,-2):if(lt(iw\,ih)\,min(1280\,ih)\,-2)'" -c:v libx264 -g 30 -b:v 1.5M -maxrate 2M -bufsize 3M -c:a aac -ac 2 -movflags +faststart ${info.outputPath}`;
   }
 
   function processMedia(info) {
@@ -94,11 +94,11 @@ const VideoTranscodeApp = () => {
       var mediaDuration = information.getDuration();
 
       // Get the media properties map
-      const properties = information.getMediaProperties();
+      var properties = information.getAllProperties();
 
       // Get the width and height of the video
-      const width = properties["width"];
-      const height = properties["height"];
+      const width = information.getProperty("height");
+      const height = properties.streams[0].height;
 
       // Calculate the aspect ratio
       const aspectRatio = width / height;
@@ -114,6 +114,7 @@ const VideoTranscodeApp = () => {
       );
 
       console.log("==================================");
+      console.log("properties" + JSON.stringify(properties));
       console.log("width :" + width + "height: " + height);
       console.log("aspect:" + aspectRatio);
       console.log("==================================");

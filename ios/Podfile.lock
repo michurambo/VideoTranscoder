@@ -28,12 +28,9 @@ PODS:
     - React-Core (= 0.71.8)
     - React-jsi (= 0.71.8)
     - ReactCommon/turbomodule/core (= 0.71.8)
-  - ffmpeg-kit-ios-https (5.1)
-  - ffmpeg-kit-react-native (5.1.0):
-    - ffmpeg-kit-react-native/https (= 5.1.0)
-    - React-Core
-  - ffmpeg-kit-react-native/https (5.1.0):
-    - ffmpeg-kit-ios-https (= 5.1)
+  - ffmpeg-kit-ios-full-gpl (5.1)
+  - ffmpeg-kit-react-native/full-gpl (5.1.0):
+    - ffmpeg-kit-ios-full-gpl (= 5.1)
     - React-Core
   - fmt (6.2.1)
   - glog (0.3.5)
@@ -424,7 +421,7 @@ DEPENDENCIES:
   - EXSplashScreen (from `../node_modules/expo-splash-screen/ios`)
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
   - FBReactNativeSpec (from `../node_modules/react-native/React/FBReactNativeSpec`)
-  - ffmpeg-kit-react-native (from `../node_modules/ffmpeg-kit-react-native`)
+  - ffmpeg-kit-react-native/full-gpl (from `../node_modules/ffmpeg-kit-react-native/ffmpeg-kit-react-native.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
   - hermes-engine (from `../node_modules/react-native/sdks/hermes-engine/hermes-engine.podspec`)
   - libevent (~> 2.1.12)
@@ -464,7 +461,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - ffmpeg-kit-ios-https
+    - ffmpeg-kit-ios-full-gpl
     - fmt
     - libevent
 
@@ -494,7 +491,7 @@ EXTERNAL SOURCES:
   FBReactNativeSpec:
     :path: "../node_modules/react-native/React/FBReactNativeSpec"
   ffmpeg-kit-react-native:
-    :path: "../node_modules/ffmpeg-kit-react-native"
+    :podspec: "../node_modules/ffmpeg-kit-react-native/ffmpeg-kit-react-native.podspec"
   glog:
     :podspec: "../node_modules/react-native/third-party-podspecs/glog.podspec"
   hermes-engine:
@@ -577,7 +574,7 @@ SPEC CHECKSUMS:
   EXSplashScreen: d38f1b2f36d288236c5ff1dde56f8a8a7ebb2ee6
   FBLazyVector: f637f31eacba90d4fdeff3fa41608b8f361c173b
   FBReactNativeSpec: 0d9a4f4de7ab614c49e98c00aedfd3bfbda33d59
-  ffmpeg-kit-ios-https: 8dffbe1623a2f227be98fc314294847a97f818e4
+  ffmpeg-kit-ios-full-gpl: 2682965e5b3e7f13a05836d46d302eafe6c5039e
   ffmpeg-kit-react-native: a8ba22b56048e8449372ba307f6bfc4f263c8445
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
   glog: 04b94705f318337d7ead9e6d17c019bd9b1f6b1b
@@ -616,6 +613,6 @@ SPEC CHECKSUMS:
   RNReanimated: cc5e3aa479cb9170bcccf8204291a6950a3be128
   Yoga: 065f0b74dba4832d6e328238de46eb72c5de9556
 
-PODFILE CHECKSUM: 1fec0d680e874b106bd52b10ad084cdd1592f6da
+PODFILE CHECKSUM: 87c2d2ba0f10b181681f369af580d831c452540b
 
 COCOAPODS: 1.12.0
